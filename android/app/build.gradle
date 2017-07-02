@@ -103,6 +103,14 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
     splits {
         abi {
             reset()
@@ -112,9 +120,29 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix '.dev'
+            resValue "string", "app_name", "RNApp Dev"
+            buildConfigField 'String', 'ENVIRONMENT', '"development"'
+        }
         release {
+            resValue "string", "app_name", "RNApp"
+            buildConfigField 'String', 'ENVIRONMENT', '"production"'
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+        }
+        releaseTest {
+            initWith(buildTypes.release)
+            applicationIdSuffix '.test'
+            resValue "string", "app_name", "RNApp Test"
+            buildConfigField 'String', 'ENVIRONMENT', '"test"'
+        }
+        releaseStaging {
+            initWith(buildTypes.release)
+            applicationIdSuffix '.staging'
+            resValue "string", "app_name", "RNApp Stg"
+            buildConfigField 'String', 'ENVIRONMENT', '"staging"'
         }
     }
     // applicationVariants are e.g. debug, release

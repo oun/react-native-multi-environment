@@ -11,13 +11,14 @@ import {
   Text,
   View
 } from 'react-native';
+import config from './src/config';
 
 export default class ReactNativeMultiEnvironment extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native! ({config.environment})
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
