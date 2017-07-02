@@ -1,0 +1,9 @@
+{
+  "apiBaseUrl": "http://dev-server:3000/api",
+  "android": {
+    "flurryApiKey": "API key for android development"
+  },
+  "ios": {
+    "flurryApiKey": "API key for iOS development"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "apiBaseUrl": "http://staging-server:3000/api",
+  "android": {
+    "flurryApiKey": "API key for android staging"
+  },
+  "ios": {
+    "flurryApiKey": "API key for iOS staging"
+  }
+}
