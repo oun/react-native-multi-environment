@@ -1,9 +1,9 @@
 {
   "apiBaseUrl": "http://production-server:3000/api",
   "android": {
-    "flurryApiKey": "API key for android production"
+    "apiKey": "API key for android production"
   },
   "ios": {
-    "flurryApiKey": "API key for iOS production"
+    "apiKey": "API key for iOS production"
   }
 }

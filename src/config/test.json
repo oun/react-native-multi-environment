@@ -1,9 +1,9 @@
 {
   "apiBaseUrl": "http://test-server:3000/api",
   "android": {
-    "flurryApiKey": "API key for android test"
+    "apiKey": "API key for android test"
   },
   "ios": {
-    "flurryApiKey": "API key for iOS test"
+    "apiKey": "API key for iOS test"
   }
-}g
+}
